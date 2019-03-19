@@ -15,17 +15,29 @@
 
 <hr>
 
+<!-- ORDER DETAILS -->
 <h2>Orders</h2>
-  <% @orders.each do |order| %>
-    <p>Invoice #<%= order.name %></p>
-    <p>Description: <%= order.line_items.first.name %></p>
-    <p>Total amount: <%= order.total_price %> <%= order.currency %></p>
-    <p>Orders status: <%= order.financial_status %></p>
-    <p>Created on: <%= order.created_at %></p>
-    <p>=========================</p>
-    <% raise %>
-  <% end %>
+
+<% @orders.each do |order| %>
+  <p>Invoice #<%= order.name %></p>
+  <p>Description: <%= order.line_items.first.name %></p>
+  <p>Total amount: <%= order.total_price %> <%= order.currency %></p>
+  <p>Orders status: <%= order.financial_status %></p>
+  <p>Created on: <%= order.created_at %></p>
+  <hr>
   <%# raise %>
+<% end %>
+
+<!-- CUSTOMERS' DETAILS -->
+<h2>Customers</h2>
+
+<% @customers.each do |customer| %>
+  <p>Full Name: <%= customer.first_name %> <%= customer.last_name %></p>
+  <p>Phone: <%= customer.phone %> </p>
+  <p>Address: <%= customer.addresses.first.address1 %></p>
+  <p>City: <%= customer.addresses.first.province %></p>
+<% end %>
+
 
 
 <h2>Webhooks</h2>
