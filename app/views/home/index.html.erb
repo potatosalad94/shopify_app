@@ -16,8 +16,16 @@
 <hr>
 
 <h2>Orders</h2>
-  <%= @orders %>
-  <% raise %>
+  <% @orders.each do |order| %>
+    <p>Invoice #<%= order.name %></p>
+    <p>Description: <%= order.line_items.first.name %></p>
+    <p>Total amount: <%= order.total_price %> <%= order.currency %></p>
+    <p>Orders status: <%= order.financial_status %></p>
+    <p>Created on: <%= order.created_at %></p>
+    <p>=========================</p>
+    <% raise %>
+  <% end %>
+  <%# raise %>
 
 
 <h2>Webhooks</h2>
