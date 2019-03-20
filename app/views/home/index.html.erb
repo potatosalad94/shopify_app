@@ -36,10 +36,13 @@
   <p>Phone: <%= customer.phone %> </p>
   <p>Address: <%= customer.addresses.first.address1 %></p>
   <p>City: <%= customer.addresses.first.province %></p>
+  <hr>
 <% end %>
 
+<h2>Backpacks profit evolution</h2>
 
-
+<%= line_chart @orders.group_by_hour_of_day(&:created_at).count, xtitle: "Hour of the day", ytitle: "Profit in AED" %>
+<!-- .sum("total_price") -->
 <h2>Webhooks</h2>
 
 <% if @webhooks.present? %>
