@@ -41,7 +41,8 @@
 
 <h2>Backpacks profit evolution</h2>
 
-<%= line_chart @orders.group_by_hour(&:created_at).count, xtitle: "Hour of the day", ytitle: "Profit in AED" %>
+<%= column_chart @orders.group_by_hour_of_day(&:created_at).values.flatten.map(&:total_price).map(&:to_f), xtitle: "Hour of the day", ytitle: "Profit in AED" %>
+<%# raise %>
 <!-- .sum("total_price") -->
 <h2>Webhooks</h2>
 
