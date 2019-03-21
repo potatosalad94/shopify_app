@@ -4,9 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 
 gem 'shopify_app'
-gem 'chartkick'
-# gem 'highcharts-rails'
+gem 'chartjs-ror'
 gem 'groupdate'
+# gem 'chartkick'
+# gem 'highcharts-rails'
 # gem 'shopify_api'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

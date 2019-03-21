@@ -1,5 +1,8 @@
 {
   "name": "shopify_app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "chart.js": "^2.8.0",
+    "chartkick": "^3.0.2"
+  }
 }
