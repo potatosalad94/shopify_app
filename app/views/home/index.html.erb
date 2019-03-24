@@ -25,7 +25,6 @@
   <p>Orders status: <%= order.financial_status %></p>
   <p>Created on: <%= order.created_at %></p>
   <hr>
-  <%# raise %>
 <% end %>
 
 <!-- CUSTOMERS' DETAILS -->
@@ -42,12 +41,8 @@
 <h2>Backpacks profit evolution</h2>
 
 <%= line_chart @data %>
-
-<% raise %>
-<!-- @orders.group_by_hour_of_day(&:created_at).values.flatten.map(&:created_at).map(&:to_time) RENVOIE LES DATES-->
-<%#= column_chart @orders.group_by_hour_of_day(&:created_at).values.flatten.map(&:total_price).map(&:to_f), xtitle: "Hour of the day", ytitle: "Profit in AED" %>
 <%# raise %>
-<!-- .sum("total_price") -->
+
 <h2>Webhooks</h2>
 
 <% if @webhooks.present? %>
@@ -59,3 +54,4 @@
 <% else %>
   <p>This app has not created any webhooks for this Shop. Add webhooks to your ShopifyApp initializer if you need webhooks</p>
 <% end %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
